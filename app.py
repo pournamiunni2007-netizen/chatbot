@@ -22,7 +22,7 @@ if prompt := st.chat_input("Say something..."):
     st.session_state.messages.append({"role": "user", "content": prompt})
 
     response = client.chat.completions.create(
-        model="openai/gpt-4o-mini",  # OpenRouter requires the provider prefix
+        model="google/gemini-2.0-flash-exp",  # OpenRouter requires the provider prefix
         messages=st.session_state.messages,
         extra_headers={  # Recommended by OpenRouter
             "HTTP-Referer": "your-app-url",  # Optional but good practice
